@@ -1,0 +1,116 @@
+$button-color: #00904A;
+
+::placeholder {
+  color: gray;
+}
+
+.invalid-text {
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.button-close-contact-modal {
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px 30px;
+}
+
+.title-contact-modal {
+  font-weight: 700;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 18px;
+  line-height: 23px;
+  color: white;
+  background: $button-color;
+}
+
+.content-contact-modal {
+  padding: 10px 30px 0 30px;
+  font-size: 16px;
+  color: #000;
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.btn-hide-modal {
+  position: absolute;
+  border: none;
+  padding: unset;
+  top: 4px;
+  right: 8px;
+  background-color: $button-color;
+}
+
+.modal-custom {
+  .button-close-explanation-modal, .button-close-note-modal {
+    width: 250px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px 30px;
+  }
+
+  .title-explanation-modal, .title-note-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    font-weight: 700;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 20px;
+    line-height: 23px;
+    color: white;
+    background: $button-color;
+  }
+
+  .content-explanation-modal, .content-note-modal {
+    padding: 10px 30px 0 30px;
+    font-size: 20px;
+    color: black;
+
+    span {
+      font-weight: 400;
+    }
+
+    .button-checkbox {
+      margin-bottom: 10px;
+    }
+
+    .input-plan-checkbox {
+      display: inline-flex;
+    }
+  }
+
+  .btn-hide-explanation-modal, .btn-hide-note-modal {
+    position: absolute;
+    border: none;
+    padding: unset;
+    top: 9px;
+    right: 20px;
+    background-color: $button-color;
+  }
+
+  .text-complete-by > i {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4F4F4F;
+  }
+}
+
+.btn-hide-modal,
+.btn-hide-explanation-modal,
+.btn-hide-note-modal {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

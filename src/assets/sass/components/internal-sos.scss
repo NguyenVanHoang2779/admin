@@ -1,0 +1,116 @@
+
+.ticket-table td, .ticket-table th {
+  border-top: solid 15px white;
+  padding: 15px 15px 7px 15px !important;
+}
+.ticket-table .b-table-details td {
+  border-top: 0;
+  padding-top: 0 !important;
+}
+.custom-multiselect .multiselect__tags {
+  overflow-y: scroll;
+  max-height: 100px;
+}
+
+.custom-multiselect .multiselect__tags::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.custom-multiselect .multiselect__tags::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+.custom-multiselect .multiselect__tags::-webkit-scrollbar-thumb
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+.ticket__logs__content::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+.ticket__logs__content::-webkit-scrollbar-thumb
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+.custom-multiselect-user {margin-bottom: 8px}
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: grid;
+}
+.img-fluid {
+  width: 3vw;
+  height: 2.5vw;
+  /*object-fit: cover;*/
+}
+
+.img-fluid-1 {
+  width: 6vw;
+  height: 5vw;
+  /*object-fit: cover;*/
+}
+
+.wrapper-image {
+  display: grid;
+  grid-template-columns: 3vw 3vw;
+  grid-template-rows: 2.5vw 2.5vw;
+  grid-gap: 1px 1px;
+}
+
+.wrapper-image-1 {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+.content-ticket {
+  text-align: justify;
+  padding-right: 5%;
+  /*border-bottom: solid 1px #8a8a8a;*/
+}
+.button-comment:hover {
+  background-color: #e2e9f0;
+  cursor: pointer;
+}
+
+.rowClass {
+  background-color: #ebf2f9;
+}
+
+.rowClass .card-body {
+  padding-top: 0;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+#modal-change-ticket > .modal-dialog {
+  min-width: 700px;
+}
+
+#modal-list-ticket-ignore > .modal-dialog {
+  max-width: 80% !important;
+}
+
+#modal-list-ticket-ignore .modal-body {
+  max-height: 70vh;
+  overflow-y: scroll;
+  padding-bottom: 2%;
+}

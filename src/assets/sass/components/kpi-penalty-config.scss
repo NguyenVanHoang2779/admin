@@ -1,0 +1,50 @@
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 5px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.label-penalty-search {
+  transform: translateY(25%)
+}
+
+.penalty-row {
+  background-color: #EBF2F9;
+  border-bottom: 15px solid white;
+}
+
+.penalty-money {
+  font-weight: bold;
+}
+
+.font-size-130-percent {
+  font-size: 130%;
+}
+
+$colors: (red, yellow, white, grey);
+@each $color in $colors {
+  .penalty-card-#{$color} {
+    background-color: $color;
+    width: 14px;
+    height: 17px;
+    border: 1px solid black;
+    margin-right: 10px;
+  }
+}
+
+.penalty-table td {
+  padding: 10px;
+}
+
+.penalty-log-tab {
+  background-color: white;
+  margin: 0 10px 10px;
+}
+
+//.penalty-table tr {
+//  border-bottom: 15px solid white;
+//}

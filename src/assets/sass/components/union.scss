@@ -1,0 +1,270 @@
+@import '../abstracts/variables';
+
+.action-column {
+  width: 15%;
+}
+.action-btn {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+}
+.div-file-type {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 3px;
+  /* max-width: 200px; */
+}
+
+.span-file-type {
+  font-size: 15px;
+  font-weight: 500;
+  color: #8c8c8c;
+  line-height: 2;
+}
+.scrollbar-file-info {
+  max-height: 70vh;
+}
+.scrollbar-log-info {
+  max-height: 75vh;
+}
+.img-bounder {
+  position: relative;
+  display: table-cell;
+}
+.img-bounder:hover > .btn-disable-file {
+  display: inline;
+}
+.file-deleted {
+  opacity: 0.1;
+}
+.btn-disable-file {
+  font-size: 20px;
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: 6px;
+}
+.dragdrop {
+  height: 150px;
+  position: relative;
+  width: 8rem;
+}
+.dragdrop >>> .custom-file-label {
+  border: 4px dotted skyblue;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  color: skyblue;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.dragdrop .custom-file:hover >>> .custom-file-label {
+  background: rgb(75, 181, 225);
+  color: #fff;
+}
+
+.dragdrop >>> .custom-file-label::after {
+  display: none;
+}
+.hard-fix-file-input {
+  top: -62px;
+}
+.document-images {
+  cursor: pointer;
+  height: 150px;
+}
+
+.input-filter {
+  width: 14.28%;
+  padding: 0 0.25rem;
+}
+
+.table-data {
+  border: 1px solid #f1f1f2;
+
+  .table {
+    thead > tr {
+      background-color: #fafafa;
+      box-shadow: inset -1px 1px 0 #f1f1f2, inset 1px -1px 0 #f1f1f2;
+      position: sticky;
+      z-index: 3;
+      top: 0;
+
+      th {
+        border: unset;
+        vertical-align: middle;
+      }
+    }
+
+    tbody > tr > td {
+      padding: 0
+    }
+  }
+}
+
+.info {
+  border-right: 1px solid #f1f1f2;
+
+  .profile {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .statistics span {
+    font-weight: 400;
+  }
+}
+
+.image-gallery {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  vertical-align: initial;
+  box-sizing: border-box;
+}
+
+.btn-profile {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+
+  > button {
+    width: 3.7rem;
+    height: 1.6rem;
+    background-color: white;
+    color: $ghtk-color;
+    border: 1px solid $ghtk-color;
+    border-radius: 30px;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: $ghtk-color;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.action {
+  gap: 8px;
+
+  .btn {
+    border-radius: 45px;
+    width: 8rem;
+  }
+}
+
+.img-small {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.document-union {
+  color: white;
+
+  .image-document {
+    object-fit: cover;
+    width: 4.7rem;
+    height: 6.4rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .num-img-extend {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.47);
+  }
+}
+
+.log-detail {
+  max-height: 12rem;
+  overflow: auto;
+  font-weight: 400;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .ant-timeline {
+    padding: 10px 0 0 0;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    -webkit-font-feature-settings: 'tnum', 'tnum';
+    font-feature-settings: 'tnum', 'tnum';
+    margin: 0;
+    list-style: none;
+  }
+  .ant-timeline-item {
+    position: relative;
+    margin: 0;
+    padding: 0 0 20px;
+    font-size: 14px;
+    list-style: none;
+  }
+  .ant-timeline-item-tail {
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    height: calc(100% - 10px);
+    border-left: 2px solid #e8e8e8;
+  }
+  .ant-timeline-item-head-blue {
+    color: $ghtk-color;
+    border-color: $ghtk-color;
+  }
+  .ant-timeline-item-head {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: $ghtk-color;
+    border: 2px solid transparent;
+    border-radius: 100px;
+  }
+  .ant-timeline-item-content {
+    position: relative;
+    top: -6px;
+    margin: 0 0 0 18px;
+    word-break: break-word;
+    max-width: 95%;
+  }
+}
+
+.img-circle {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  vertical-align: initial;
+  box-sizing: border-box;
+}
+
+$statuses: (pending: #F2994A, approved: #00904A, rejected: #FC5555);
+@each $status, $color in $statuses {
+  .bg-tag-#{$status} {
+    background-color: $color;
+  }
+}
+
+.if-preview-pdf::-webkit-scrollbar {
+  width: 0;
+}

@@ -1,0 +1,13 @@
+.env
+yarn.lock
+/dist/
+/.idea/*
+/ghtk-admin/nbproject/private/
+/nbproject/
+/node_modules/
+package-lock.json
+/npm-cache/
+/yarn-cache/
+.nvmrc
+.DS_Store
+/test/unit/coverage/

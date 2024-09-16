@@ -1,0 +1,143 @@
+.modal-xxl {
+    .modal-dialog {
+        max-width: 80% !important;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+    }
+}
+
+.modal-xl {
+    .modal-dialog {
+        max-width: 70% !important;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+    }
+}
+
+.modal-lg-custom {
+    .modal-dialog {
+        max-width: 60% !important;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+    }
+}
+
+.modal-md {
+    .modal-dialog {
+        max-width: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 50vw;
+    }
+}
+
+.modal-sm-custom {
+    .modal-dialog {
+        max-width: 40% !important;
+        transform: translate(-50%, -50%);
+        width: 40vw;
+    }
+}
+
+.modal-xs-custom {
+    .modal-dialog {
+        max-width: 30% !important;
+        transform: translate(-50%, -50%);
+        width: 30vw;
+    }
+}
+
+.modal-custom-430 {
+    .modal-dialog {
+        max-width: 430px !important;
+        transform: translate(-50%, -50%);
+        width: 430px;
+    }
+}
+
+.modal-custom-1024 {
+  .modal-dialog {
+    max-width: 1024px !important;
+    transform: translate(-50%, -50%);
+    width: 1024px;
+  }
+}
+.modal-custom-600 {
+    .modal-dialog {
+        max-width: 600px !important;
+        transform: translate(-50%, -50%);
+        width: 600px;
+    }
+}
+.modal-custom-500 {
+  .modal-dialog {
+      max-width: 500px !important;
+      transform: translate(-50%, -50%);
+      width: 500px;
+  }
+}
+
+.modal-xss-custom {
+    .modal-dialog {
+        max-width: 27% !important;
+        transform: translate(-50%, -50%);
+        width: 27vw;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .modal-xss-custom {
+        .modal-dialog {
+            max-width: 35% !important;
+            transform: translate(-50%, -50%);
+            width: 35vw;
+        }
+    }
+    .modal-xl {
+      .modal-dialog {
+        max-width: 75% !important;
+        transform: translate(-50%, -50%);
+        width: 75vw;
+      }
+    }
+}
+
+.checkbox-ghtk {
+    .custom-control-label::before {
+        border-color: #069255 !important;
+    }
+    .custom-control-input:checked ~ .custom-control-label::before {
+        border-color: #069255 !important;
+        background-color: #069255 !important;
+    }
+}
+
+//modal overflow vertical in mobile screen
+.modal-overflow-auto {
+  width: auto;
+  overflow-x: auto;
+}
+
+.modal-custom {
+    .modal-body {
+        padding: 0;
+    }
+}
+
+.header-modal-educate {
+  padding: 16px;
+}
+.header-modal-training {
+  padding: 9px;
+}
+
+#modal-confirm-training {
+  .modal-body {
+    padding: 14px !important;
+  }
+}
+
+#modal-upload-file, #questions-wrap #modal-notification {
+  .modal-title {
+    line-height: 0.5;
+  }
+}

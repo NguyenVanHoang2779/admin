@@ -1,0 +1,86 @@
+.log {
+  max-height: 20rem;
+  overflow: scroll;
+}
+
+.log::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ant-timeline {
+  box-sizing: border-box;
+  color: #000;
+  font-variant: tabular-nums;
+  line-height: 1.8;
+  -webkit-font-feature-settings: "tnum", "tnum";
+  font-feature-settings: "tnum", "tnum";
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ant-timeline-item {
+  position: relative;
+  margin: 0;
+  padding: 0 0 4px;
+  list-style: none;
+}
+
+.ant-timeline-item-tail {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  height: calc(100% - 5px);
+  border-left: 3px solid #e8e8e8;
+}
+
+.ant-timeline-item-head-blue {
+  background-color: #14a05b !important;
+  border-color: #14a05b !important;
+}
+
+.ant-timeline-item-head {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #C4C4C4;
+  border: 2px solid transparent;
+  border-radius: 100px;
+}
+
+.ant-timeline-item-head-active {
+  background-color: black;
+  border-color: black;
+  border-radius: 100px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+
+  .checkmark {
+    transform: rotate(45deg);
+    height: 8px;
+    width: 5px;
+    margin-top: 0.2rem;
+    margin-left: 36%;
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+  }
+}
+
+.ant-timeline-item-head-log {
+  background-color: #14a05b !important;
+  border-color: #14a05b !important;
+  border-radius: 100px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  margin-top: 3px;
+}
+
+.ant-timeline-item-content {
+  position: relative;
+  top: -4px;
+  margin: 0 0 0 24px;
+  word-break: break-word;
+}

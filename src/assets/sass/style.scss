@@ -1,0 +1,276 @@
+@import "mixins";
+@import "common/loading";
+@import "common/modal";
+@import "common/custom";
+@import "common/override";
+
+// Base
+.red-icon {
+  color: red;
+}
+
+.green-icon {
+  color: green;
+}
+
+.blue-icon {
+  color: #26B4FF;
+}
+
+.red-text {
+  color: red;
+}
+
+.ghtk-color {
+  color: $ghtk-color;
+}
+
+.placeholder {
+  color: darkgrey;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 0 0 0.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.894rem;
+  position: absolute;
+}
+#modal-create-class .placeholder {
+  color: #4e5155;
+}
+select {
+  option[value=null] {
+    color: darkgrey;
+  }
+
+  option[value=''] {
+    color: darkgrey;
+  }
+
+  option[value=undefined] {
+    color: darkgrey;
+  }
+}
+
+
+//clear-zindex
+.clear-zindex>li>a {
+  z-index: 0 !important;
+  max-width: 400px
+}
+
+.dropdown-item,
+.page-link,
+.nav {
+  outline: 0;
+}
+
+// Page transition
+//
+
+.router-transitions {
+  opacity: 1;
+  transition: opacity .2s;
+
+  body.app-loading & {
+    opacity: .75;
+  }
+}
+
+// Tables
+//
+
+table.b-table>thead>tr>th.sorting,
+table.b-table>tfoot>tr>th.sorting {
+  padding-right: 2rem;
+}
+
+[dir=rtl] .b-table>thead>tr>th.sorting,
+[dir=rtl] .b-table>tfoot>tr>th.sorting {
+  padding-left: 2rem;
+
+  &:before {
+    right: auto;
+    left: .75em;
+  }
+
+  &:after {
+    right: auto;
+    left: .25em;
+  }
+}
+
+.table {
+  &.is_align_middle {
+
+    tr,
+    td,
+    th {
+      vertical-align: middle;
+    }
+  }
+}
+
+.default-style[dir=rtl] .b-table {
+  @import "~@/vendor/styles/_appwork/include";
+
+  >thead>tr>th.sorting,
+  >tfoot>tr>th.sorting {
+    padding-right: $table-cell-padding;
+  }
+
+  &.card-table>thead>tr>th.sorting:first-child,
+  &.card-table>tfoot>tr>th.sorting:first-child {
+    padding-right: $card-spacer-x;
+  }
+}
+
+.material-style[dir=rtl] .b-table {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  >thead>tr>th.sorting,
+  >tfoot>tr>th.sorting {
+    padding-right: $table-cell-padding;
+  }
+
+  &.card-table>thead>tr>th.sorting:first-child,
+  &.card-table>tfoot>tr>th.sorting:first-child {
+    padding-right: $card-spacer-x;
+  }
+}
+
+/* CONTRACT */
+.list-appendix {
+  .modal-slide {
+    .modal-body {
+      margin: unset;
+      padding: 0px;
+    }
+
+    .modal-dialog {
+      width: 40rem;
+    }
+  }
+}
+
+// table green color
+table.table_border_green {
+
+  td,
+  th {
+    border: 1px solid #02BC77;
+  }
+}
+
+// b-modal
+.modal-backdrop {
+  opacity: .5;
+}
+
+//btn-modal-explain
+.btn-modal-explain {
+  background-color: #EDEDED;
+  border: none;
+}
+
+//bar of echarts
+.echart-size-150 .echarts {
+  width: auto !important;
+  height: 150px !important;
+}
+
+//show-salary-sale
+.w-200px {
+  width: 200px;
+}
+
+.h-30px {
+  height: 30px;
+}
+
+.stateTrue>>>.multiselect__tags {
+  border-color: #28a745;
+}
+
+.stateFalse>>>.multiselect__tags {
+  border-color: #d9534f;
+}
+
+.multiselect .multiselect__tag-icon {
+  position: absolute !important;
+}
+
+.multiselect .multiselect__tag {
+  padding: 0 1.2rem 0 0.5rem !important;
+}
+
+.head-filter-status .multiselect__tags .multiselect__single {
+  color: #a9a9a9 !important;
+}
+
+.toast-style {
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
+
+.multiselect__placeholder {
+  display: initial !important;
+}
+
+
+.d-inline-table {
+  display: inline-table !important;
+}
+
+.input-radius {
+  border-radius: 2.5px !important;
+}
+
+.radio-custom {
+
+  label::before {
+    border: 2px #02BC77 solid !important;
+    background-color: #ffff !important;
+  }
+  input:not([disabled="disabled"]):checked ~ label::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.65rem;
+    height: 0.65rem;
+    top: 0.31rem;
+    left: 0.23rem;
+    border-radius: 50%;
+    background-color: #02BC77 !important;
+  }
+}
+
+.header-modal-custom {
+  button:focus.close {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.modal-header-custom {
+  button.close {
+    &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+.detail-logs .log-timeline-item-tail {
+  top: 6px !important;
+  left: 6px !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.bg-tag-status {
+  background-color: #D98840;
+}

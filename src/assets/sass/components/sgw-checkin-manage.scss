@@ -1,0 +1,137 @@
+$ghtk_color: #088a4b;
+$error_color: #c0c0c0;
+$rejected_color: #df6161;
+$pending: #8c8586;
+$rejected: #c41626;
+
+.fcDetailWorkShift {
+  .border-grey {
+    border: 1px solid #ccc !important;
+  }
+
+  .border-bottom-grey {
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  #calendar_popup {
+    & {
+      float: left;
+    }
+
+    .fc-header-toolbar {
+      text-transform: capitalize !important;
+    }
+
+    .fc-event-main {
+      span.text_shift_on {
+        background: #fff;
+        width: 50px;
+        display: inline-block;
+        font-size: 11px;
+        font-weight: bold;
+        color: #686875;
+        padding-left: 5px;
+        margin: 2px;
+      }
+
+      a {
+        cursor: pointer;
+        line-height: 14px;
+      }
+
+      .status {
+        font-size: 11px;
+      }
+
+      .fc-title {
+        font-size: 11px;
+        padding-left: 5px;
+      }
+    }
+
+    /**
+    Hide data of other month
+     */
+    .fc-other-month {
+      background: #f3f3f3;
+
+      .fc-day-number {
+        display: none;
+      }
+    }
+
+    .processing {
+      background-color: #dfdfdf !important;
+      color: #534d4d !important;;
+      border: none !important;
+    }
+
+    .fc-day-top {
+      position: relative;
+    }
+
+    .add-checkin-log {
+      font-size: 15px;
+      padding: 0px 5px;
+      background: #178e55;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 20px;
+      width: 18px;
+    }
+
+    .fc-other-month .add-checkin-log {
+      display: none;
+    }
+  }
+
+  #history-update-worktype {
+    width: 48%;
+    float: left;
+    height: auto;
+    min-height: 120px;
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+
+  #note-checkin-cod {
+    width: 15%;
+    float: right;
+    margin-left: 10px;
+    margin-top: 0px;
+
+    ul {
+      list-style-type: none;
+
+      button {
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      #btn-approved {
+        background-color: $ghtk_color;
+        color: $ghtk_color;
+        border: $ghtk_color;
+      }
+
+      #btn-pending {
+        background-color: $pending;
+        color: $pending;
+        border: $pending;
+      }
+
+      #btn-rejected {
+        background-color: $rejected;
+        color: $rejected;
+        border: $rejected;
+      }
+    }
+  }
+
+
+}
+

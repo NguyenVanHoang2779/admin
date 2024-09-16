@@ -1,0 +1,173 @@
+$gray: #FAFAFA;
+$border-color: #9CB3D7;
+$button-color: #00904A;
+$button-shadow: 0 0 0 2px rgba(6, 146, 85, 0.4);
+
+.header h4 {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.btn-statistic:focus {
+  box-shadow: $button-shadow;
+}
+
+.staff-ticket, .action {
+  button {
+    background-color: white;
+    color: $button-color;
+    border: 1px solid $button-color;
+    border-radius: 30px;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: $button-color;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: $button-shadow;
+    }
+  }
+}
+
+.take-care {
+  color: black;
+  font-weight: 500;
+
+  .filter {
+    padding: 0 0.75rem 0 0.5rem;
+  }
+
+  .input-filter {
+    width: 12.5%;
+    padding: 0 0.25rem;
+  }
+
+  .input-border input {
+    border-radius: 5px;
+  }
+
+  .no-record {
+    box-shadow: inset 1px 0 0 $border-color;
+    border-right: 1px solid $border-color;
+  }
+}
+
+.table-data {
+  border-bottom: 0.5px solid $border-color;
+
+  .table {
+    thead > tr {
+      background-color: $gray;
+      box-shadow: inset -1px 1px 0 $border-color, inset 1px -1px 0 $border-color;
+      position: sticky;
+      z-index: 3;
+      top: 0;
+
+      th {
+        border: unset;
+        vertical-align: middle;
+      }
+    }
+
+    tbody > tr > td {
+      padding: 0
+    }
+  }
+}
+
+.staff-ticket {
+  border: 0.5px solid $border-color;
+  border-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+
+  .info {
+    border-right: 0.5px solid $border-color;
+
+    .profile {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .statistics span {
+      font-weight: 400;
+    }
+
+    .button-chat, .icon-chat {
+      position: absolute;
+
+      &:focus {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+      }
+    }
+
+    .manager {
+      display: flex;
+    }
+  }
+
+  .image-gallery {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    vertical-align: initial;
+    box-sizing: border-box;
+  }
+
+  .multi-ticket > .statistics-title {
+    display: flex;
+    background: rgba(176, 176, 176, 0.25);
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    height: 2rem;
+
+    b {
+      padding: 0 0.35rem;
+    }
+  }
+
+  .btn-profile {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+
+    button {
+      width: 3.7rem;
+      height: 1.6rem;
+    }
+  }
+}
+
+.action {
+  border-left: 0.5px solid $border-color;
+
+  .btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: unset;
+    border-radius: unset;
+
+    &:hover {
+      cursor: default;
+    }
+
+    .btn-action, .btn-detail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      margin-bottom: 5px;
+      gap: 10px;
+      width: 7rem;
+      height: 1.5rem;
+    }
+  }
+}

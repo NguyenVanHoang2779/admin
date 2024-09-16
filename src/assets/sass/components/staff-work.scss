@@ -1,0 +1,12 @@
+.action-view {
+  .dropdown-item {
+    line-height: initial;
+    padding: 0.5rem 0.75rem;
+    overflow: hidden;
+
+    &:hover {
+      background-color: #bceed8;
+      overflow: hidden;
+    }
+  }
+}

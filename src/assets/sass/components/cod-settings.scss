@@ -1,0 +1,140 @@
+.cod-settings-form {
+  .input-size {
+    width: 150px !important;
+  }
+
+  .input-inline-sm {
+    height: auto;
+    width: 60px !important;
+    padding: 0 2px 0 5px;
+    display: inline;
+    min-height: auto;
+  }
+
+  .user-photo {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: top;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .max-point-input {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .input-small-size {
+    width: 105px !important;
+  }
+
+  .input-point-incurred {
+    width: 150px !important;
+  }
+
+  .add-point-incurred {
+    width: 80px !important;
+    border-radius: 8%;
+    padding: 3px;
+  }
+
+  .delete-point-incurred {
+    padding-top: unset;
+    color: #02b371;
+  }
+
+  .note-point {
+    color: red;
+    margin-top: 5px;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+
+  .message {
+    > ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  .g-map-iframe {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+    width: 100%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border: navajowhite;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      padding-top: 56%;
+    }
+  }
+
+  .multiselect-success .stop-point-tag {
+    border-style: none !important;
+  }
+
+  .stop-point-tag .multiselect__tag{
+    display: inline-block;
+    background-color: #02832e;
+    color: white;
+    border-radius: 0.75rem;
+  }
+
+  .note-point {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    height: 23px;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .note-point:hover {
+    height: auto;
+    white-space: unset;
+  }
+
+  .w-250px {
+    width: 250px;
+  }
+
+  .w-200px {
+    width: 200px;
+  }
+
+  .w-100px {
+    width: 100px;
+  }
+
+  .handle {
+    cursor: move;
+  }
+}
+
+#ModalPkBusLog {
+  .modal-dialog {
+    max-width: 1000px;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+}
+

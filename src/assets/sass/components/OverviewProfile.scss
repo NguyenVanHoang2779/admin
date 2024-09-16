@@ -1,0 +1,35 @@
+#chart {
+  width: 100%;
+  min-height: 400px;
+  font-size: 14px;
+}
+
+#salary {
+  .c3-legend-item {
+    font-weight: bold;
+  }
+}
+
+#delivery-pick {
+  .c3-legend-item {
+    font-weight: bold;
+  }
+}
+
+//@media only screen and (min-width: 1450px) {
+//  #chart-bar {
+//    width: 100%;
+//  }
+//}
+//
+//@media only screen and (min-width: 1200px) {
+//  #chart-bar {
+//    width: 1200px;
+//  }
+//}
+//
+//@media only screen and (min-width: 1024px) {
+//  #chart-bar {
+//    width: 1000px;
+//  }
+//}

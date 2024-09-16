@@ -1,0 +1,153 @@
+<template>
+  <div>
+    <!------------------------------------------------1. Tool Tra cứu thông tin phiên tài xế theo mã phiên -------------------------------------------------------------->
+    <b-card class="mb-1" no-body>
+      <b-card-header>
+        <a class="d-flex justify-content-between text-dark" href="javascript:void(0)" v-b-toggle.accordion>
+          1. Tra cứu thông tin phiên tài xế theo mã phiên
+          <div class="collapse-icon"></div>
+        </a>
+      </b-card-header>
+      <b-collapse id="accordion" :visible="one.visible" accordion="accordion">
+        <b-card-body>
+          <div class="form-row">
+            <div class="col-md-3 mb-1"></div>
+            <div class="col-md-4 mb-1">
+              <b-input type="number" v-model="one.sessionId" placeholder="Nhập mã phiên"/>
+            </div>
+            <div class="col-md-2 col-xl-2 mb-3">
+              <ladda-btn :loading="one.loadingButton" @click.native="getDriverSessionDataById" data-style="expand-right"
+                         class="btn btn-primary" style="width: 100%">
+                Tìm kiếm
+              </ladda-btn>
+            </div>
+          </div>
+          <b-card bg-variant="default">
+            <label class="text-center" :style="{color: 'red'}">{{this.noticeMessage}}</label>
+            <div v-if="sessionData">
+              <div v-for="(item, index) in this.fields" :key="index">
+                <label>{{(index + 1) + '. ' + item.label}}</label>
+                <ShowObject :objectData="sessionData[item.key]" :fields="item.childFields" :type="item.type"/>
+              </div>
+            </div>
+          </b-card>
+        </b-card-body>
+      </b-collapse>
+    </b-card>
+
+  </div>
+</template>
+
+<script>
+import driverSessionService from 'domain/services/driver-session-service'
+import commonHelper from 'infrastructures/helpers/common-helpers'
+import LaddaBtn from '@/vendor/libs/ladda/Ladda'
+import ShowObject from './ShowObject'
+
+const sessionFields = [
+  {key: 'ss_id', label: 'Mã phiên:', description: '', childFields: null},
+  {key: 'time_start', label: 'Thời gian bắt đầu:', description: '', childFields: null},
+  {key: 'time_end', label: 'Thời gian kết thúc:', description: '', childFields: null},
+  {key: 'range_time', label: 'Thời gian làm việc:', description: '', childFields: null},
+  {key: 'distance', label: 'Tổng quãng đường:', description: ' km', childFields: null},
+  {key: 'count_packages', label: 'Tổng số đơn:', description: ' đơn', childFields: null},
+  {key: 'count_points', label: 'Số điểm dừng:', description: ' điểm', childFields: null}
+]
+
+const usersFields = [
+  {key: 'username', label: 'Tên đăng nhập:', description: '', childFields: null},
+  {key: 'position_name', label: 'Vị trí công việc:', description: '', childFields: null},
+  {key: 'fullname', label: 'Họ tên:', description: '', childFields: null},
+  {key: 'storage', label: 'Kho:', type: 'single', description: '', childFields: null},
+  {key: 'province', label: 'Tỉnh:', type: 'single', description: '', childFields: null},
+  {key: 'region', label: 'Khu vực:', type: 'single', description: '', childFields: null},
+  {key: 'alias', label: 'Alias:', type: 'single', description: '', childFields: null},
+  {key: 'cod_id', label: 'Mã cod:', type: 'single', description: '', childFields: null}
+]
+
+const truckFields = [
+  {key: 'code', label: 'Biển số xe:', description: '', childFields: null},
+  {key: 'weight', label: 'Trọng tải:', description: ' tấn', childFields: null},
+  {key: 'weight_billing', label: 'Trọng tải tính tiền:', description: ' tấn', childFields: null},
+  {key: 'lease_type', label: 'Loại xe:', description: '', childFields: null}
+]
+
+const pointFields = [
+  {key: 'point_name', label: 'Điểm dừng:', description: '', childFields: null},
+  {key: 'up_bags', label: 'Tổng bao lên tải:', description: '', childFields: null},
+  {key: 'point_coordination', label: 'Tọa độ điểm dừng:', description: '', childFields: null},
+  {key: 'up_packages', label: 'Tổng đơn lên tải:', description: '', childFields: null},
+  {key: 'driver_coordination', label: 'Tọa độ checkin:', description: '', childFields: null},
+  {key: 'down_bags', label: 'Tổng bao xuống tải:', description: '', childFields: null},
+  {key: 'distance_checkin', label: 'Khoảng cách checkin:', description: ' m', childFields: null},
+  {key: 'down_packages', label: 'Tổng đơn xuống tải:', description: '', childFields: null},
+  {key: 'distance', label: 'Số Km:', description: ' Km', childFields: null},
+  {key: 'count_packages', label: 'Sản lượng:', description: '', childFields: null},
+  {key: 'time', label: 'Đến nơi:', description: '', childFields: null},
+  {key: 'status', label: 'Trạng thái:', description: '', childFields: null},
+  {key: 'time_end', label: 'Chốt xong:', description: '', childFields: null},
+  {key: 'reason', label: 'Lý do từ chối:', description: '', childFields: null}
+]
+
+const routeFields = [
+  {key: 'name', label: 'Tên tuyến:', description: '', childFields: null},
+  {key: 'workshift', label: 'Ca làm việc:', description: '', childFields: null},
+  {key: 'type', label: 'Loại tuyến:', description: '', childFields: null}
+]
+export default {
+  components: {
+    LaddaBtn,
+    ShowObject
+  },
+  props: {
+    sessionId: Number
+  },
+  data: () => ({
+    fields: [
+      {key: 'session', label: 'Thông tin phiên:', description: '', type: 'object', childFields: [...sessionFields]},
+      {key: 'route', label: 'Thông tin tuyến đường:', description: '', type: 'object', childFields: [...routeFields]},
+      {key: 'users', label: 'Thông tin tài xế:', description: '', type: 'array', childFields: [...usersFields]},
+      {key: 'truck', label: 'Thông tin xe:', description: '', type: 'object', childFields: [...truckFields]},
+      {key: 'points', label: 'Thông tin điểm dừng:', description: '', type: 'array', childFields: [...pointFields]}
+    ],
+    one: {
+      visible: false,
+      loadingButton: false,
+      sessionId: ''
+    },
+    sessionData: null,
+    noticeMessage: ''
+  }),
+  methods: {
+    getDriverSessionDataById: function () {
+      this.one.loadingButton = true
+      if (!this.one.sessionId) {
+        this.one.loadingButton = false
+        return commonHelper.showMessage('Chưa nhập id phiên', 'warning')
+      }
+
+      let data = {
+        'ssId': this.one.sessionId
+      }
+
+      driverSessionService.getDriverSessionDataById(data).then(res => {
+        if (res.data.success) {
+          this.noticeMessage = ''
+          this.sessionData = res.data.data
+          commonHelper.showMessage(res.data.message, 'success')
+        } else {
+          this.noticeMessage = 'Không có dữ liệu'
+          this.sessionData = null
+          commonHelper.showMessage(res.data.message, 'warning')
+        }
+      }).then(() => {
+        this.one.loadingButton = false
+      })
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

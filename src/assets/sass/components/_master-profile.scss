@@ -1,0 +1,89 @@
+.update-master {
+  .label-form {
+    display: block;
+    padding-bottom: 0;
+    line-height: 1.54;
+    margin-bottom: 6px;
+  }
+  .top-title {
+    position: relative;
+
+    &__right-button {
+      top: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    .top-search-box {
+      position: absolute;
+      top: 0;
+      left: 300px;
+
+      input {
+        width: 280px;
+      }
+    }
+  }
+
+  .icon-add-image {
+    font-size: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0%);
+    display: none;
+    z-index: 999;
+    color: #d8d8d8;
+  }
+
+  .gallery-profile {
+    position: absolute;
+    bottom: -12%;
+    left: 35%;
+    color: #26B4FF;
+  }
+
+  .cover-image-profile {
+    display: none;
+    width: 120px;
+    height: 80px;
+    position: absolute;
+    background: black;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0.4;
+  }
+  
+  .image-profile:hover {
+    .cover-image-profile {
+      display: block;
+    }
+    
+    .icon-add-image {
+      display: block;
+    }
+  }
+  
+  .sub_btn_add {
+    margin-left: 0.625rem;
+  }
+
+  .row-bordered {
+    overflow: unset;
+  }
+
+  .is-danger {
+    border-color: #E0B4B4;
+    color: #9F3A38;
+    box-shadow: none;
+  }
+
+  .ttcn-header {
+    position: relative;
+
+    .group-btn-confirm {
+      position: absolute;
+      right: 18px;
+      top: 12px;
+    }
+  }
+}

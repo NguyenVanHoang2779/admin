@@ -1,0 +1,164 @@
+$ghtk-color: #069255;
+$ghtk-color-focus: #037a46;
+$input-border-color: #BDBDBD;
+
+.multiselect--disabled {
+  opacity: unset !important;
+}
+
+.multiselect__tags {
+  border-color: $input-border-color !important;
+}
+
+input, input.form-control, textarea.form-control, select, select.custom-select {
+  border-color: $input-border-color;
+}
+
+.candidate_management_page .multiselect__tags {
+  border: 1px solid #e8e8e8 !important;
+}
+
+.page-link {
+  border-color: #ccc !important;
+}
+
+.multiselect__option--highlight, .multiselect__option--selected.multiselect__option--highlight {
+  background-color: $ghtk-color !important;
+}
+
+.badge, .card, .modal-header, .modal-content,
+.custom-control-label::before,
+.alert {
+  border-radius: 0;
+}
+.period-question > * {
+  margin: 0 !important;
+}
+// css screen stop work
+.main-stop-work {
+  .multiselect .multiselect__single, .multiselect .multiselect__tag {
+    max-width: 80% !important;
+  }
+  .input-user-censor {
+    .multiselect__tags {
+      border: 0 !important;
+      border-bottom: 1px solid #BDBDBD !important;
+      border-radius: 0 !important;
+    }
+  }
+
+  .modal-header .close {
+    display: none !important;
+  }
+
+  #modal-order-stop-work {
+    .modal-header .close {
+      display: block !important;
+    }
+  }
+
+  .modal-phone {
+    .modal-body {
+      padding: 0.6rem !important;
+    }
+  }
+
+  .input-filter {
+    .multiselect__tags {
+      border-radius: 6px;
+    }
+  }
+
+  #modal-censor-order {
+    .multiselect__select {
+      display: none !important;
+    }
+
+    .list-user-censor {
+      padding: 0;
+    }
+  }
+}
+// end
+
+.modal-header {
+  .close {
+    opacity: 0.8;
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    outline: none;
+    &:hover {
+      opacity: unset;
+    }
+  }
+  background-color: $ghtk-color;
+  color: white;
+}
+
+.ghtk-checkbox {
+  //.form-group {
+  //  width: 80%;
+  //  margin-bottom: 0;
+  //  margin-top: 0.5rem;
+  //  .custom-control-inline {
+  //    width: 45%;
+  //    .custom-control-label {
+  //      color: black;
+  //    }
+  //  }
+  //}
+
+  .custom-control.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $ghtk-color !important;
+    background-color: $ghtk-color !important;
+  }
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $ghtk-color !important;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: $ghtk-color !important;
+    background-color: $ghtk-color !important;
+  }
+  &.custom-control.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $ghtk-color !important;
+    background-color: $ghtk-color !important;
+  }
+  &.custom-control.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before, .custom-control.custom-radio .custom-control-input:indeterminate ~ .custom-control-label::before {
+    border-color: #069255 !important;
+    background-color: #069255 !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E") !important;
+  }
+}
+
+.dropdown-toggle-no-caret::after {
+  display: none !important;
+}
+
+.input-filter  .multiselect__placeholder {
+  color: darkgrey !important;
+}
+
+.custom-control.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #02b371;
+  background-color: #02b371;
+}
+
+.multiselect__tags .multiselect__input::placeholder {
+  color: #828282 !important;
+}
+
+.multiselect__option--group {
+  font-weight: bold;
+}
+
+.form-control::placeholder {
+  color: #828282 !important;
+  opacity: 1;
+}
+
+#modal-upload-file, #questions-wrap #modal-notification {
+  .modal-header {
+    height: 50px;
+  }
+}
